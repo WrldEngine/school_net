@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ get_teacher.name }}</title>
+</head>
+<body>
+	<h1>Учитель: {{ get_teacher.name }}</h1><br>
+	<strong>Предмет: {{ get_teacher.subject }}</strong><br>
+	<strong>Имя пользователя: {{ get_teacher.username }}</strong><br>
+	
+	<div id="tasks">
+		{% for task in get_tasks %}
+			<hr>
+			<div id="task">
+				<h1>Название: {{ task.task_name }}</h1>
+				<h1>Содержимое: {{ task.task_desc }}</h1>
+				<a href="/task/{{ task.teacher }}/{{ task.id }}">Подробнее</a>
+				{% if isTeacher %}
+					<a href="/teacher/{{ task.teacher }}/answers?task_id={{ task.id }}">Ответы</a>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</body>
+</html>

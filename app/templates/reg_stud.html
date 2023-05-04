@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design.css') }}">
+	<title>Ученик</title>
+</head>
+<body>
+	<strong>{{ err }}</strong>
+	<form method="post">
+		<div class="reg_box">
+		    <text>Регистрация ученика</text>
+		    <hr>
+		    <label for="name"><b>ФИО:</b></label>
+		    <input type="text" placeholder="ФИО" name="name" required>
+		    
+		    <label for="username"><b>Имя пользователя:</b></label>
+		    <input type="text" placeholder="Имя пользователя" name="username" required>
+		    
+		    <label for="grade"><b>Класс:</b></label>
+		    <input type="number" placeholder="Класс" min="1" max="12" name="grade" required>
+		    
+		    <label for="grade_sym"><b>Буква класса:</b></label>
+		    <input type="text" placeholder="Буква класса" maxlength="1" pattern="[A-Za-z]" name="grade_sym" required>
+		    
+		    <label for="password"><b>Пароль:</b></label>
+		    <input type="password" placeholder="Пароль" name="password" required>
+		    
+		    <button type="submit" class="registerbtn">Потвердить</button>
+			<strong>Уже есть аккаунт? <a href="/auth">Войти</a></strong>
+   		</div>
+	</form>
+</body>
+</html>

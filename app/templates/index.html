@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Work on mistakes</title>
+</head>
+<body>
+	<h1>Работа над ошибками</h1>
+	<strong>{{ user }}</strong>
+	<div id="student">
+		<h1>Ученики</h1>
+		{% for data in get_data %}
+			<li>
+				<strong>{{ data.username }}</strong>
+				<ol>
+					<li>{{ data.name }}</li>
+					<li>{{ data.grade }} "{{ data.grade_symbol }}"</li>
+				</ol>
+			</li>
+		{% endfor %}
+	</div>
+	<div id="Teachers">
+		<h1>Учителя</h1>
+		{% for teacher in teachers %}
+			<li>
+				<strong>{{ teacher.username }}</strong>
+				<ol>
+					<li>{{ teacher.name }}</li>
+					<li>{{ teacher.subject }}</li>
+					<li> <a href="/teacher/{{ teacher.username }}">LINK</a> </li>
+				</ol>
+			</li>
+		{% endfor %}
+	</div>
+</body>
+</html>

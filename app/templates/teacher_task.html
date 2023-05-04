@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ task.task_name }}</title>
+</head>
+<body>
+	<h1>{{ task.task_name }}</h1><hr>
+	<strong>Предмет: {{ task.task_desc }}</strong><br>
+	<img src="/storage_t/{{ task.teacher }}/{{ task.id }}"><hr>
+
+	{% if not ansExist %}
+		<form method="post" enctype="multipart/form-data">
+			<input type="text" name="ans_desc" required><br>
+	        <input type="file" name="ans_photo" required><br>
+			<input type="submit", value="Выложить">
+		</form>
+	{% else %}
+		<h1>Вы уже отправили ответ</h1>
+	{% endif %}
+</body>
+</html>

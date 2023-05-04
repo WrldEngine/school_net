@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ student.name }}</title>
+</head>
+<body>
+	<h1>Ученик: {{ student.name }}</h1><br>
+	<strong>Класс: {{ student.grade }} "{{ student.grade_symbol }}"</strong><br>
+	<strong>Имя пользователя: {{ student.username }}</strong><br>
+
+	{% if is_author %}
+		{% for answer in stud_ans %}
+			<div>
+				<strong>Ответ был отправлен учителю: {{ answer.to_teacher }}</strong>
+				<a href="/task/{{ answer.to_teacher }}/{{ answer.task_id }}">Исходная ссылка</a><br>
+				{% if answer.status is none %}
+					<strong>[В ожидании проверки]</strong>
+				{% elif answer.status %}
+					<strong>[Одобрено]</strong>
+				{% elif not answer.status %}
+					<strong>[Отклонено]</strong>
+				{% endif %}
+			</div>
+		{% endfor %}
+	{% endif %}
+</body>
+</html>

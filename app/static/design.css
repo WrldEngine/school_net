@@ -1,0 +1,108 @@
+strong {
+  font-family: Roboto, sans-serif;
+  color: black;
+}
+
+hr {
+  border: 1px solid black;
+  margin-bottom: 25px;
+}
+
+body {
+  background-color: rgb(255, 229, 128);
+  margin: 0;
+}
+
+text {
+  color: black;
+  font-family: verdana;
+  font-size: 30px;
+  top: 60px;
+}
+
+.reg_box {
+  position: relative;
+  border: 5px dashed black;
+  z-index: 1;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  background: white;
+  top: 60px;
+}
+
+.reg_box input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: white;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 15px;
+  border: 2px solid #3d2e2d;
+}
+
+.registerbtn {
+  background-color: yellow;
+  color: black;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  background: #80FF00;
+}
+
+.reg_box label {
+  color: black;
+  font-family: Roboto, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+}
+
+.home {
+  background-color: #75cc5f;
+}
+
+li a:hover {
+  background-color: #c2c2c2;
+}
+
+li {
+  border-right: 1px solid #000000;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
