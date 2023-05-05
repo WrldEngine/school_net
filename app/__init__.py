@@ -1,14 +1,13 @@
 from flask import Flask
-from .database import db
 from app.main_server import disp
+from .database import db
+
+from conf import config_dir
+import os
 
 def init_app():
 	app = Flask(__name__)
-
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///management.db'
-	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-	app.config['SECRET_KEY'] = 'some_secret'
-	app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
+	app.config.from_object('conf.BaseConfig')
 
 	db.init_app(app)
 
