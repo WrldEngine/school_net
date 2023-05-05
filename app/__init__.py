@@ -11,7 +11,7 @@ def init_app():
 
 	db.init_app(app)
 
-	with app.test_request_context():
+	with app.app_context():
 		db.create_all()
 
 	app.register_blueprint(disp)
