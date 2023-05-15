@@ -1,0 +1,273 @@
+@font-face {
+  font-family: 'Roboto-Condensed-Regular';
+  src: url('../fonts/RobotoCondensed-Regular.ttf');
+  font-style: 400;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Condensed-Bold';
+  src: url('../fonts/RobotoCondensed-Bold.ttf');
+  font-style: 400;
+  font-weight: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+  background: url(../background.png);
+}
+
+.head__menu{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  background: black;
+  margin-bottom: 15px;
+  font-size: 40px;
+}
+
+.head__menu a{
+  font-family: 'Roboto-Condensed-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.home{
+  transition: 0.4s;
+}
+
+.head__menu .home:active{
+  transform: scale(0.85);
+}
+
+.head__menu .home:hover{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ffffff;
+    border-top: 3px solid #ffffff;
+    border-radius: 3px;
+}
+
+.head__menu .contacts:hover{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
+  border-radius: 3px;
+}
+
+.contacts {
+  transition: 0.4s;
+}
+
+.head__menu .contacts:active{
+  transform: scale(0.85);
+}
+
+.registration{
+  margin-top: 165px;
+  text-align: center;
+}
+
+.regestration{
+  margin-top:  50px;
+}
+
+.reg__box {
+  max-width: 350px;
+  border: solid #000000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 15px;
+  background: white;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+.reg__box-title {
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: #000000;
+}
+
+.username {
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+.username p{
+  margin-bottom: 5px;
+}
+
+.username input{
+  outline: none;
+  padding: 5px;
+  font-family: 'Roboto-Condensed-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  width: 315px;
+  border: 2px solid black;
+  text-align: left;
+
+}
+
+.password {
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+.password p{
+  margin-bottom: 5px;
+}
+
+.password input{
+  outline: none;
+  padding: 5px;
+  font-family: 'Roboto-Condensed-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  text-align: left;
+  width: 315px;
+  border: 2px solid black;
+}
+
+.registerbtn {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 315px;
+  margin-bottom: 15px;
+  transition: 0.4s;
+  padding: 5px;
+  background: #000000;
+
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.register__btn span{
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+}
+
+
+.registerbtn:hover{
+  background: darkslateblue;
+}
+
+.name{
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+.name p{
+  margin-bottom: 5px;
+}
+
+.name input{
+  outline: none;
+  padding: 5px;
+  font-family: 'Roboto-Condensed-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  width: 315px;
+  border: 2px solid black;
+  text-align: left;
+}
+
+.grade{
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+.grade p{
+  margin-bottom: 5px;
+}
+
+.grade input{
+  outline: none;
+  padding: 5px;
+  font-family: 'Roboto-Condensed-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  width: 315px;
+  border: 2px solid black;
+  text-align: left;
+}
+
+.grade__sym{
+  font-family: 'Roboto-Condensed-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+.grade__sym p{
+  margin-bottom: 5px;
+}
+
+.grade__sym input{
+  outline: none;
+  padding: 5px;
+  font-family: 'Roboto-Condensed-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  width: 315px;
+  border: 2px solid black;
+  text-align: left;
+}
+
+hr{
+  margin: -5px;
+}

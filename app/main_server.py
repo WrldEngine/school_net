@@ -1,12 +1,7 @@
 from flask import Flask
-from flask import ( redirect, 
-                    render_template, 
-                    request, 
-                    url_for, 
-                    session,
-                    make_response,
-                    flash,
-                    Blueprint)
+from flask import redirect, render_template, url_for
+from flask import request, session, make_response
+from flask import flash, Blueprint
 
 from .models import db, Students, Teachers, Tasks, SendAns
 

@@ -1,34 +1,43 @@
-<!DOCTYPE html>
-<html>
 <head>
 	<title>Ученик</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design.css') }}">
-	<ul>
-		<li><a href="#" class="home">WOM</a></li>
-		<li><a href="#">Контакты</a></li>
-	</ul>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design/style.css') }}">
 </head>
 <body>
 	{% with messages = get_flashed_messages(with_categories=true) %}
-		{% if messages %}
-			{% for category, message in messages %}
-				<strong>{{ message }}</strong>
-    		{% endfor %}
-  		{% endif %}
+	{% if messages %}
+		{% for category, message in messages %}
+			<strong>{{ message }}</strong>
+		{% endfor %}
+	{% endif %}
 	{% endwith %}
+	<ul class="head__menu">
+		<li><a href="#!" class="home">RNO</a></li>
+		<li><a href="#!" class="contacts">Контакты</a></li>
+		<li><a href="../html/reg_stud.html" class="contacts">Регистрация</a></li>
+	</ul>
 	<form method="post">
-		<div class="reg_box">
-		    <text>Вход</text>
-		    <hr>
-		    <label for="username"><b>Имя пользователя:</b></label>
-		    <input type="text" placeholder="Имя пользователя" name="username" required>
+		<div class="registration">
+			<div class="reg__box">
 
-		    <label for="password"><b>Пароль:</b></label>
-		    <input type="password" placeholder="Пароль" name="password" required>
+				<p class="reg__box-title">Вход</p>
+				<hr>
+				<div class="username">
+					<form  for="username"><p class="username-text">Имя пользователя:</p></form>
+					<input type="text" placeholder="Имя пользователя" name="username" required>
+				</div>
 
-		    <button type="submit" class="registerbtn">Потвердить</button>
-		    <strong>Нет аккаунта? <a href="/reg_student">Зарегистрируйся</a></strong>
-   		</div>
+				<div class="password">
+					<form class="password-text" for="password"><p>Пароль:</p></form>
+					<input type="password" placeholder="Пароль" name="password" required>
+				</div>
+
+				<div class="register__btn">
+					<button class="registerbtn" type="submit">Потвердить</button>
+					<strong><span>Нет аккаунта?</span> <a href="/reg_student">Зарегистрируйся</a></strong>
+				</div>
+			</div>
+		</div>
 	</form>
 </body>
+
 </html>

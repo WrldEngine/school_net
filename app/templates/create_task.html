@@ -2,14 +2,17 @@
 <html>
 <head>
 	<title>Создать задание</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design.css') }}">
 </head>
 <body>
 	<h1>Создать задание</h1>
 	<form method="post" enctype="multipart/form-data">
-		<input type="text" name="task_name"><br>
-		<input type="text" name="task_desc"><br>
-        <input type="file" name="task_photo"><br>
-		<input type="submit", value="Выложить">
+		<div class="create_task">
+			<input type="text" name="task_name"><br>
+			<input type="text" name="task_desc"><br>
+			<input type="file" name="task_photo"><br>
+			<input type="submit", value="Выложить">
+		</div>
 	</form>
 </body>
 </html>

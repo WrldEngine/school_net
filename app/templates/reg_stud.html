@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design/style.css') }}">
 	<title>Ученик</title>
 </head>
 <body>
+	<ul class="head__menu">
+		<li><a href="#!" class="home">RNO</a></li>
+		<li><a href="#!" class="contacts">Контакты</a></li>
+		<li><a href="../html/auth.html" class="contacts">Авторизация</a></li>
+	</ul>
 	<strong>{{ err }}</strong>
 	<form method="post">
-		<div class="reg_box">
-		    <text>Регистрация ученика</text>
-		    <hr>
-		    <label for="name"><b>ФИО:</b></label>
-		    <input type="text" placeholder="ФИО" name="name" required>
-		    
-		    <label for="username"><b>Имя пользователя:</b></label>
-		    <input type="text" placeholder="Имя пользователя" name="username" required>
-		    
-		    <label for="grade"><b>Класс:</b></label>
-		    <input type="number" placeholder="Класс" min="1" max="12" name="grade" required>
-		    
-		    <label for="grade_sym"><b>Буква класса:</b></label>
-		    <input type="text" placeholder="Буква класса" maxlength="1" pattern="[A-Za-z]" name="grade_sym" required>
-		    
-		    <label for="password"><b>Пароль:</b></label>
-		    <input type="password" placeholder="Пароль" name="password" required>
-		    
-		    <button type="submit" class="registerbtn">Потвердить</button>
-			<strong>Уже есть аккаунт? <a href="/auth">Войти</a></strong>
-   		</div>
+		<div class="regestration">
+			<div class="reg__box">
+				<p class="reg__box-title">Регистрация ученика</p>
+				<hr>
+				<div class="name">
+					<form for="name"><p class="name-text">ФИО:</p></form>
+					<input type="text" placeholder="ФИО" name="name" required>
+				</div>
+				
+				<div class="username">
+					<form for="username"><p class="username-text">Имя пользователя:</p></form>
+					<input type="text" placeholder="Имя пользователя" name="username" required>
+				</div>
+				
+				<div class="grade">
+					<form for="grade"><p class="grade-text">Класс:</p></form>
+					<input type="number" placeholder="Класс" min="1" max="12" name="grade" required>
+				</div>
+
+				<div class="grade__sym">
+					<form for="grade_sym"><p class="grade__sym-text">Буква класса:</p></form>
+					<input type="text" placeholder="Буква класса" maxlength="1" pattern="[A-Za-z]" name="grade_sym" required>
+				</div>
+
+				<div class="password">
+					<form class="password-text" for="password"><p>Пароль:</p></form>
+					<input type="password" placeholder="Пароль" name="password" required>
+				</div>
+				
+				<div class="register__btn">
+					<button class="registerbtn" type="submit" >Потвердить</button>
+					<strong><span>Уже есть аккаунт?</span><a href="/auth">Войти</a></strong>
+				</div>
+			</div>
+		</div>
 	</form>
 </body>
 </html>
