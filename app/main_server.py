@@ -3,6 +3,8 @@ from flask import redirect, render_template, url_for
 from flask import request, session, make_response
 from flask import flash, Blueprint
 
+import hashlib
+
 from .models import db, Students, Teachers, Tasks, SendAns
 
 disp = Blueprint('main_server', __name__, template_folder='templates')
@@ -50,13 +52,16 @@ def reg_stud():
         std_usname_ex = Students.query.filter(Students.username == user_name).all()
         tch_usname_ex = Teachers.query.filter(Teachers.username == user_name).all()
 
+        password = hashlib.sha256(bytes(password, 'utf-8'))
+        password_hex = password.hexdigest()
+
         if not std_usname_ex and not tch_usname_ex:
             save_stud = Students(
                             name=full_name,
                             username=user_name,
                             grade=grade,
                             grade_symbol=grade_symbol,
-                            password=password
+                            password=password_hex
                         )
             try:
                 db.session.add(save_stud)
@@ -79,6 +84,9 @@ def reg_teach():
         user_name = request.form['username']
         password = request.form['password']
 
+        password = hashlib.sha256(bytes(password, 'utf-8'))
+        password_hex = password.hexdigest()
+
         subject = request.form.getlist('options')[0]
 
         std_usname_ex = Students.query.filter(Students.username == user_name).all()
@@ -88,7 +96,7 @@ def reg_teach():
             save_teacher = Teachers(
                             name=full_name,
                             username=user_name,
-                            password=password,
+                            password=password_hex,
                             subject=subject
                         )
             try:
@@ -111,11 +119,14 @@ def auth_stud():
         user_name = request.form['username']
         password = request.form['password']
 
+        password = hashlib.sha256(bytes(password, 'utf-8'))
+        password_hex = password.hexdigest()
+
         Stud_exist = Students.query.filter(Students.username == user_name).all()
         Teach_exist = Teachers.query.filter(Teachers.username == user_name).all()
 
-        Stud_exist_passw = Students.query.filter(Students.password == password).all()
-        Teach_exist_passw = Teachers.query.filter(Teachers.password == password).all()
+        Stud_exist_passw = Students.query.filter(Students.password == password_hex).all()
+        Teach_exist_passw = Teachers.query.filter(Teachers.password == password_hex).all()
 
         if Stud_exist and Stud_exist_passw or Stud_exist_passw and Teach_exist_passw:
             session['name'] = user_name

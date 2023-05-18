@@ -7,3 +7,4 @@ class BaseConfig:
 	SQLALCHEMY_DATABASE_URI = 'sqlite:///management.db'
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
 	MAX_CONTENT_LENGTH = 1024 * 1024
+	DB_PASSWORD = 'some_password'
