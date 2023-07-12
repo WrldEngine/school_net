@@ -14,9 +14,11 @@ def main_pg():
     if 'name' in session:
         get_data = Students.query.all()
         get_teacher = Teachers.query.all()
+        get_tasks = Tasks.query.all()
+
         user_name = session['name']
 
-        return render_template('index.html', get_data=get_data, teachers=get_teacher, user=user_name)
+        return render_template('index.html', get_data=get_data, teachers=get_teacher, user=user_name, tasks=get_tasks)
         
     return redirect('/reg_student')
 

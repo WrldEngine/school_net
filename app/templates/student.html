@@ -11,8 +11,8 @@
 	{% if is_author %}
 		{% for answer in stud_ans %}
 			<div>
-				<strong>Ответ был отправлен учителю: {{ answer.to_teacher }}</strong>
-				<a href="/task/{{ answer.to_teacher }}/{{ answer.task_id }}">Исходная ссылка</a><br>
+				<strong>Ответ был отправлен учителю: {{ answer.answered_tasks.name }}</strong>
+				<a href="/task/{{ answer.answered_tasks.name }}/{{ answer.task_id }}">Исходная ссылка</a><br>
 				{% if answer.status is none %}
 					<strong>[В ожидании проверки]</strong>
 				{% elif answer.status %}

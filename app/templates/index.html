@@ -31,5 +31,9 @@
 			</li>
 		{% endfor %}
 	</div>
+	<hr>
+	{% for task in tasks %}
+		<stroung>От учителя: {{ task.task_author.name }}<strong>
+	{% endfor %}
 </body>
 </html>

@@ -8,7 +8,7 @@
 		{% for answer in answer_list %}
 			<div id="answer">
 				<h1>Содержимое: {{ answer.answer_desc }}</h1>
-				<h1>Автор: {{ answer.from_author }}</h1>
+				<h1>Автор: {{ answer.answer_author.name }}</h1>
 				<img src="/storage_s/{{ answer.from_author }}/{{ answer.to_teacher }}/{{ answer.task_id }}">
 				<form method='post' action='/teacher/{{ answer.to_teacher }}/answers?task_id={{ answer.task_id }}&author={{ answer.from_author }}&status=True'>
 					<button>Одобрить</button>
